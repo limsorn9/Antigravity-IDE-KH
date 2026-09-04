@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Antigravity IDE</string>
+    <string name="title_file_explorer">Explorer</string>
+    <string name="title_ai_assistant">Antigravity AI</string>
+    <string name="action_save">Save</string>
+    <string name="action_run">Run / Preview</string>
+    <string name="action_open_folder">Open Folder</string>
+    <string name="action_new_file">New File</string>
+    <string name="action_new_folder">New Folder</string>
+    <string name="action_apply_to_editor">Apply to Editor</string>
+    <string name="action_insert_at_cursor">Insert at Cursor</string>
+    <string name="action_replace_selection">Replace Selection</string>
+    <string name="hint_ask_ai">Ask AI to write, edit, or refactor code...</string>
+    <string name="settings_api_key">Gemini API Key</string>
+    <string name="settings_model">Gemini Model</string>
+</resources>
