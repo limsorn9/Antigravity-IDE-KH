@@ -179,7 +179,7 @@ class FileManager(private val context: Context) {
                  */
                 fun main() {
                     val ideName = "Antigravity IDE"
-                    val version = "0.0.2"
+                    val version = "0.0.3"
                     
                     println("🚀 Welcome to ${'$'}ideName v${'$'}version!")
                     println("🤖 Powered by Google Gemini AI SDK for Android")
@@ -208,7 +208,7 @@ class FileManager(private val context: Context) {
                         self.gravity_offset = 9.80665
 
                     def calculate_escape_velocity(self, mass_kg: float, radius_m: float) -> float:
-                        """Computes escape velocity from planetary mass and radius."""
+                        # Computes escape velocity from planetary mass and radius.
                         G = 6.67430e-11
                         return math.sqrt(2 * G * mass_kg / radius_m)
 

@@ -41,9 +41,13 @@ class EditorController {
         internalEditor?.let { editor ->
             val cursor = editor.cursor
             if (cursor.isSelected) {
-                val start = cursor.left
-                val end = cursor.right
-                editor.text.replace(start, end, replacement)
+                editor.text.replace(
+                    cursor.leftLine,
+                    cursor.leftColumn,
+                    cursor.rightLine,
+                    cursor.rightColumn,
+                    replacement
+                )
             } else {
                 // If nothing selected, insert at current cursor
                 insertAtCursor(replacement)
@@ -54,8 +58,7 @@ class EditorController {
     fun insertAtCursor(textToInsert: String) {
         internalEditor?.let { editor ->
             val cursor = editor.cursor
-            val index = cursor.left
-            editor.text.insert(index, textToInsert)
+            editor.text.insert(cursor.leftLine, cursor.leftColumn, textToInsert)
         }
     }
 
@@ -89,7 +92,7 @@ class EditorController {
     }
 
     fun setFontSize(sizeSp: Float) {
-        internalEditor?.textSize = sizeSp
+        internalEditor?.setTextSize(sizeSp)
     }
 
     fun setWordWrap(wrap: Boolean) {
@@ -132,7 +135,7 @@ fun CodeEditorView(
                     typefaceText = Typeface.MONOSPACE
                     typefaceLineNumber = Typeface.MONOSPACE
                     isLineNumberEnabled = true
-                    textSize = fontSizeSp
+                    setTextSize(fontSizeSp)
                     isWordwrap = wordWrap
                     tabWidth = tabSize
                     setPinLineNumber(true)
@@ -173,7 +176,7 @@ fun CodeEditorView(
                         editor.setSelection(prevCursorLine, prevCursorCol)
                     } catch (_: Exception) {}
                 }
-                editor.textSize = fontSizeSp
+                editor.setTextSize(fontSizeSp)
                 editor.isWordwrap = wordWrap
                 editor.tabWidth = tabSize
             }
