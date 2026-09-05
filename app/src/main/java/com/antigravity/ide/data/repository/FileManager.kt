@@ -179,7 +179,7 @@ class FileManager(private val context: Context) {
                  */
                 fun main() {
                     val ideName = "Antigravity IDE"
-                    val version = "1.0.0"
+                    val version = "0.0.2"
                     
                     println("🚀 Welcome to ${'$'}ideName v${'$'}version!")
                     println("🤖 Powered by Google Gemini AI SDK for Android")
